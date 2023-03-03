@@ -32,10 +32,10 @@ type Options struct {
 var (
 	DefaultOptions = &Options{
 		Iterations: 3,
-		Memory: 64 * 1024,
-		Threads: 4,
+		Memory:     64 * 1024,
+		Threads:    4,
 		SaltLength: 16,
-		KeyLength: 32,
+		KeyLength:  32,
 	}
 )
 
@@ -120,10 +120,10 @@ func (Argon2Id) DecodeIntoOptions(hash string) (Options, []byte, []byte, error) 
 
 	return Options{
 		Iterations: uint32(iters),
-		Memory: uint32(mem),
-		Threads: uint8(threads),
+		Memory:     uint32(mem),
+		Threads:    uint8(threads),
 		SaltLength: uint32(len(rawSalt)),
-		KeyLength: uint32(len(rawKey)),
+		KeyLength:  uint32(len(rawKey)),
 	}, rawKey, rawSalt, nil
 }
 
